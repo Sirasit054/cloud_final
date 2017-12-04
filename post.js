@@ -1,10 +1,10 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://admin:admin@ds044667.mlab.com:44667/test1";
+//var MONGODB_URL = "mongodb://admin:admin@ds044667.mlab.com:44667/test1";
 var db;
-MongoClient.connect(url, function (err, database) {
+MongoClient.connect(MONGODB_URL, function (err, database) {
     if (err) throw err;
     db = database;
-    console.log("Connected to " + url);
+    console.log("Connected to " + MONGODB_URL);
 });
 function getAllPosts(req, res) {
     //Get data from mongoDB
@@ -48,3 +48,4 @@ module.exports = {
     insertNewPosts : insertNewPosts
 
 };
+
