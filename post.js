@@ -1,11 +1,22 @@
 var MongoClient = require('mongodb').MongoClient;
-var MONGODB_URL = "mongodb://admin:admin@ds044667.mlab.com:44667/test1";
-var db;
-MongoClient.connect(MONGODB_URL, function (err, database) {
-    if (err) throw err;
-    db = database;
-    console.log("Connected to " + MONGODB_URL);
-});
+var mongoose = require('mongoose');
+//var MONGODB_URL = "mongodb://admin:admin@ds044667.mlab.com:44667/test1";
+//var db;
+//MongoClient.connect(MONGODB_URL, function (err, database) {
+//  if (err) throw err;
+//  db = database;
+//   console.log("Connected to " + MONGODB_URL);
+//});
+
+mongoose.connect('mongodb://admin:admin@ds044667.mlab.com:44667/test1', {useMongoClient: true});
+mongoose.connection.on('error', console.error.bind(console, 'Connection error:'));
+
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () { });
+
+
 function getAllPosts(req, res) {
     //Get data from mongoDB
     var query = {};
@@ -48,4 +59,3 @@ module.exports = {
     insertNewPosts : insertNewPosts
 
 };
-
