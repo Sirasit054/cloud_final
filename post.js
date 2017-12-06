@@ -16,12 +16,11 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () { });
 
-
 function getAllPosts(req, res) {
     //Get data from mongoDB
     var query = {};
 
-    //POINT 4. Set sort the query by recently create_date
+    
     var sort = {create_date: -1}; 
     db.collection("posts").find(query).sort(sort).toArray(function (err, result) {
         if (err) throw err;
@@ -31,7 +30,7 @@ function getAllPosts(req, res) {
 }
 
 function getPostsByUser(req, res) {
-    // Additional 1.    
+   
     var query = {username : "Oly"};
     var sort = {create_date: -1};
     db.collection("posts").find(query).sort(sort).toArray(function (err, result) {
@@ -53,7 +52,7 @@ function insertNewPosts(req, res) {
 }
 
 module.exports = {
-    // POINT 5. Export the functions
+
     getAllPosts : getAllPosts,
     getPostsByUser : getPostsByUser,
     insertNewPosts : insertNewPosts
