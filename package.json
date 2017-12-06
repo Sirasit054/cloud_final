@@ -1,28 +1,42 @@
-{
-  "name": "fs-test-server",
-  "version": "1.0.0",
-  "private": true,
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [
-    "express",
-    "mongoDB",
-    "heroku"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "express": "^4.16.2",
-    "moment": "^2.19.2",
-    "mongodb": "^2.2.33",
-    "mongoose": "^4.13.3"
+  {
+    "name": "fs-test-server",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Project with NodeJS / Express / MongoDB <br>",
+    "dependencies": {
+      "body-parser": "^1.18.2",
+      "cors": "^2.8.4",
+      "express": "^4.16.2",
+      "moment": "^2.19.2",
+      "mongodb": "^2.2.33",
+      "mongoose": "^4.13.3"
+    },
+    "devDependencies": {
+      "nodemon": "^1.12.1"
+    },
+    "engines": {
+      "node": "8.4.0"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/jirayuch01/smsServiceAPI.git"
+    },
+    "keywords": [
+      "express",
+      "mongoDB",
+      "heroku"
+    ],
+    "author": "Sirasit Molee",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Sirasit054/cloud_final/issues"
+    },
+    "homepage": "https://github.com/Sirasit054/cloud_final#readme"
   }
 
 
-}
+
